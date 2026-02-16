@@ -1300,7 +1300,7 @@ static ngx_int_t ngx_http_pinba_start_handler(ngx_http_request_t *r) /* {{{ */
 
 	ctx = ngx_http_get_module_ctx(r, ngx_http_pinba_module);
 	if (ctx) {
-		return NGX_OK;
+		return NGX_DECLINED;
 	}
 
 	ctx = ngx_pcalloc(r->pool, sizeof(ngx_pinba_request_ctx_t));
@@ -1313,7 +1313,7 @@ static ngx_int_t ngx_http_pinba_start_handler(ngx_http_request_t *r) /* {{{ */
 		ngx_http_set_ctx(r, NULL, ngx_http_pinba_module);
 	}
 
-	return NGX_OK;
+	return NGX_DECLINED;
 }
 /* }}} */
 
